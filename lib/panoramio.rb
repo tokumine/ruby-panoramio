@@ -21,7 +21,8 @@ class Panoramio
 
     protected
       def to_params(options)
-        options.merge!({ :order => :popularity,
+        #ONLY USE DEFAULTS IF NOT PRESENT
+        options.reverse_merge!({ :order => :popularity,
                          :set   => :public,
                          :size  => :thumbnail,
                          :from  => 0,
