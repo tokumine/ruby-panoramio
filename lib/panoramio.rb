@@ -21,7 +21,6 @@ class Panoramio
 
     protected
       def to_params(options)
-        #ONLY USE DEFAULTS IF NOT PRESENT
         options.reverse_merge!({ :order => :popularity,
                          :set   => :public,
                          :size  => :thumbnail,
@@ -34,6 +33,7 @@ class Panoramio
       end
 
       def to_photos(json)
+        return [] if json['count'] == 0 || json['photos'].size == 0           
         struct = Struct.new('Photo', *json['photos'].first.keys)
         json['photos'].map {|p| struct.new(*p.values) }
       end
