@@ -10,7 +10,7 @@ begin
     gem.email = "christian.hellsten@gmail.com"
     gem.homepage = "http://github.com/christianhellsten/ruby-panoramio"
     gem.authors = ["Christian Hellsten"]
-    gem.add_dependency "pauldix-typhoeus"
+    gem.add_dependency "typhoeus"
     gem.add_dependency "json"
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.add_development_dependency "jeremymcanally-matchy"
